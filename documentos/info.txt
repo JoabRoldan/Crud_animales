@@ -1,0 +1,21 @@
+
+use crud_animales;
+
+
+db.animales.insert({
+    "nombre_mascota": "Firulais",
+    "edad": 3,
+    "especie": "Perro",
+    "raza": "Labrador",
+    "nombre_duenio": "Carlos"
+});
+
+db.createUser({
+    user: "mongoadmin",
+    pwd: "123456",
+    roles: [
+        { role: "readWrite", db: "crud_animales" }
+    ]
+});
+
+mongo -u mongoadmin -p 123456 --authenticationDatabase crud_animales
