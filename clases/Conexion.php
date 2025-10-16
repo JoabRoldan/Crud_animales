@@ -1,4 +1,5 @@
 <?php 
+require_once $_SERVER['DOCUMENT_ROOT'] . "/b221190039/crud_mascotas/vendor/autoload.php";
     require_once __DIR__ . '/../vendor/autoload.php';
 
     class Conexion {
@@ -6,9 +7,9 @@
            try {
                 $servidor = "127.0.0.1";
                 $puerto = "27017";
-                $usuario = "mongoadmin";
-                $password = "123456";
-                $BD = "crud";
+                $usuario = "backend";
+                $password = "backend2025";
+                $BD = "221190039_crud";
                 $cadenaConexion = "mongodb://" . 
                                     $usuario . ":" . 
                                     $password . "@". 
