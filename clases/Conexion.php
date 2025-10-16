@@ -5,17 +5,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/b221190039/crud_mascotas/vendor/autol
     class Conexion {
         public static function conectar() {
            try {
-                $servidor = "127.0.0.1";
+                $servidor = "localhost";
                 $puerto = "27017";
                 $usuario = "backend";
                 $password = "backend2025";
                 $BD = "221190039_crud";
-                $cadenaConexion = "mongodb://" . 
-                                    $usuario . ":" . 
-                                    $password . "@". 
-                                    $servidor .":". 
-                                    $puerto ."/". 
-                                    $BD;
+                $cadenaConexion = "mongodb://$usuario:$password@$servidor:$puerto/$BD?authSource=admin";
                 $cliente = new MongoDB\Client($cadenaConexion);
                 return $cliente->selectDatabase($BD);
            } catch (\Throwable $th) {
